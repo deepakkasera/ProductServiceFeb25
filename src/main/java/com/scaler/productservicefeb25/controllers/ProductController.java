@@ -19,13 +19,13 @@ public class ProductController {
     // http://localhost:8080/products/1 => GET
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable("id") Long id) {
-        return null;
+        return productService.getProductById(id);
     }
 
     // http://localhost:8080/products
     @GetMapping()
     public List<Product> getAllProducts() {
-        return new ArrayList<>();
+        return productService.getAllProducts();
     }
 
     @PostMapping()
