@@ -2,6 +2,8 @@ package com.scaler.productservicefeb25.controllers;
 
 import com.scaler.productservicefeb25.models.Product;
 import com.scaler.productservicefeb25.services.ProductService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -18,8 +20,15 @@ public class ProductController {
 
     // http://localhost:8080/products/1 => GET
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable("id") Long id) {
-        return productService.getProductById(id);
+    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) {
+        System.out.println("Random text!!!");
+
+        Product product = productService.getProductById(id);
+
+        return new ResponseEntity<>(
+                product,
+                HttpStatus.NOT_FOUND
+        );
     }
 
     // http://localhost:8080/products
