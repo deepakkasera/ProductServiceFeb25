@@ -3,6 +3,7 @@ package com.scaler.productservicefeb25.controllers;
 import com.scaler.productservicefeb25.exceptions.ProductNotFoundException;
 import com.scaler.productservicefeb25.models.Product;
 import com.scaler.productservicefeb25.services.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import java.util.List;
 public class ProductController {
     private ProductService productService;
 
-    public ProductController(ProductService productService) {
+    public ProductController(@Qualifier("selfProductService") ProductService productService) {
         this.productService = productService;
     }
 
@@ -66,7 +67,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteMapping(@PathVariable("id") Long id) {
+    public void deleteProduct(@PathVariable("id") Long id) {
 
     }
 

@@ -4,13 +4,15 @@ import com.scaler.productservicefeb25.dtos.FakeStoreProductDto;
 import com.scaler.productservicefeb25.exceptions.ProductNotFoundException;
 import com.scaler.productservicefeb25.models.Category;
 import com.scaler.productservicefeb25.models.Product;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service("fakeStoreProductService")
+//@Primary
 public class FakeStoreProductService implements ProductService {
     //This Service implementation uses FakeStore to fetch products from FakeStore.
     private RestTemplate restTemplate;
