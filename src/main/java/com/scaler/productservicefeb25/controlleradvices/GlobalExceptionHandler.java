@@ -16,13 +16,13 @@ public class GlobalExceptionHandler {
         );
     }
 
-    @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
-    public void handleArrayIndexedOutOfBound() {
+//    @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
+//    public void handleArrayIndexedOutOfBound() {
+//
+//    }
 
-    }
-
-    @ExceptionHandler(Exception.class)
-    public void handleException() {
-
-    }
+//    @ExceptionHandler(Exception.class)
+//    public void handleException() {
+//
+//    }
 }
