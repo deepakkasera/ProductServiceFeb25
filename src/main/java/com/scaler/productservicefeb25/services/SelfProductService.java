@@ -38,7 +38,7 @@ public class SelfProductService implements ProductService {
 
     @Override
     public List<Product> getAllProducts() {
-        return null;
+        return productRepository.findAll();
     }
 
     @Override
@@ -53,6 +53,8 @@ public class SelfProductService implements ProductService {
         if (optionalCategory.isEmpty()) {
             //Save the category
             category = categoryRepository.save(category);
+        } else {
+            category = optionalCategory.get();
         }
 
         product.setCategory(category);

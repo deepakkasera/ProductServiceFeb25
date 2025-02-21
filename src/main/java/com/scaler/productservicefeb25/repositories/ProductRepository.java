@@ -19,6 +19,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Override
     List<Product> findAll();
+    //select * from products;
 
     Optional<Product> findByTitleContains(String str);
     // select * from products where title like '%str%'

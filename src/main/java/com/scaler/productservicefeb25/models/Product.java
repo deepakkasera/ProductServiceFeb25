@@ -13,12 +13,15 @@ public class Product extends BaseModel {
     private String imageUrl;
     private double price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JoinColumn
     private Category category;
 }
 
 
 /*
+
+xY => x_y
 
    1            1
 Product ==== Category => M:1
