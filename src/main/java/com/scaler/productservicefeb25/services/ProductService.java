@@ -2,13 +2,12 @@ package com.scaler.productservicefeb25.services;
 
 import com.scaler.productservicefeb25.exceptions.ProductNotFoundException;
 import com.scaler.productservicefeb25.models.Product;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 public interface ProductService {
     Product getProductById(Long productId) throws ProductNotFoundException;
 
-    List<Product> getAllProducts();
+    Page<Product> getAllProducts(int pageNumber, int pageSize);
 
     Product createProduct(Product product);
 

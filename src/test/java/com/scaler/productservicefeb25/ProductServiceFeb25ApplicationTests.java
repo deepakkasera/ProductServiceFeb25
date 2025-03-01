@@ -14,11 +14,11 @@ import java.util.Optional;
 
 @SpringBootTest
 class ProductServiceFeb25ApplicationTests {
-    @Autowired
-    private ProductRepository productRepository;
-
-    @Autowired
-    private CategoryRepository categoryRepository;
+//    @Autowired
+//    private ProductRepository productRepository;
+//
+//    @Autowired
+//    private CategoryRepository categoryRepository;
 
     @Test
     void contextLoads() {
@@ -30,7 +30,7 @@ class ProductServiceFeb25ApplicationTests {
 //        }
 
         //EAGER
-        Optional<Product> optionalProduct = productRepository.findById(1L);
+//        Optional<Product> optionalProduct = productRepository.findById(1L);
 
         //LAZY
 //        Optional<Category> optionalCategory = categoryRepository.findById(1L);

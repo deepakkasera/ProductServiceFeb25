@@ -13,7 +13,7 @@ public class Product extends BaseModel {
     private String imageUrl;
     private double price;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn
     private Category category;
 }
